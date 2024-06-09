@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Report Dispute Master</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Credit Report Dispute Master</h1>
+        <p>Generate customized dispute letters to remove derogatory information from your credit report.</p>
+        <form id="disputeForm">
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="form-group">
+                <label for="cityStateZip">City, State, ZIP code</label>
+                <input type="text" id="cityStateZip" name="cityStateZip" required>
+            </div>
+            <div class="form-group">
+                <label for="creditBureaus">Credit Bureaus</label>
+                <input type="checkbox" id="experian" name="creditBureaus" value="Experian"> Experian
+                <input type="checkbox" id="equifax" name="creditBureaus" value="Equifax"> Equifax
+                <input type="checkbox" id="transunion" name="creditBureaus" value="TransUnion"> TransUnion
+            </div>
+            <div class="form-group">
+                <label for="inquiryDates">Dates of Inquiries</label>
+                <input type="text" id="inquiryDates" name="inquiryDates" required>
+            </div>
+            <div class="form-group">
+                <label for="creditors">Names of Creditors</label>
+                <input type="text" id="creditors" name="creditors" required>
+            </div>
+            <div class="form-group">
+                <label>Were these inquiries authorized?</label>
+                <input type="radio" id="authorizedYes" name="authorized" value="Yes"> Yes
+                <input type="radio" id="authorizedNo" name="authorized" value="No" checked> No
+            </div>
+            <div class="form-group">
+                <label for="additionalDetails">Additional Details</label>
+                <textarea id="additionalDetails" name="additionalDetails"></textarea>
+            </div>
+        </form>
+        <div class="buttons">
+            <button type="button" onclick="generatePrompt(1)">Prompt 1</button>
+            <button type="button" onclick="generatePrompt(2)">Prompt 2</button>
+            <button type="button" onclick="generatePrompt(3)">Prompt 3</button>
+        </div>
+        <div class="output" id="outputArea">
+            <h2>Generated Letter</h2>
+            <p id="generatedLetter"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
